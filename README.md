@@ -1,8 +1,8 @@
-# Parallel BFS Sudoku-solver using pthread in C
+# Parallel Sudoku-solver using pthread in C
 
 ## Overview
 
-This project is the group project for the Operating System course at VinUni, the aim of this one is to implement the sudoku solver with parallelized BFS.
+This project is the group project for the Operating System course at VinUni, the aim of this one is to implement the sudoku solver with parallelized BFS & DFS.
 
 ## Code instruction
 
