@@ -46,7 +46,6 @@ extern "C" {
 /**
  * A value to be stored in an @ref ArrayList.
  */
-
 typedef Grid *ArrayListValue;
 
 /**
@@ -55,25 +54,20 @@ typedef Grid *ArrayListValue;
  *
  * @see arraylist_new
  */
-
 typedef struct _ArrayList ArrayList;
 
 /**
  * Definition of an @ref ArrayList.
  */
-
 struct _ArrayList {
 
 	/** Entries in the array */
-
 	ArrayListValue *data;
 
 	/** Length of the array */
-
 	unsigned int length;
 
 	/** Private data and should not be accessed */
-
 	unsigned int _alloced;
 };
 
@@ -82,7 +76,6 @@ struct _ArrayList {
  *
  * @return Non-zero if the values are equal, zero if they are not equal.
  */
-
 typedef int (*ArrayListEqualFunc)(ArrayListValue value1,
                                   ArrayListValue value2);
 
@@ -97,7 +90,6 @@ typedef int (*ArrayListEqualFunc)(ArrayListValue value1,
  *                            be sorted before value1, zero if the two values
  *                            are equal.
  */
-
 typedef int (*ArrayListCompareFunc)(ArrayListValue value1,
                                     ArrayListValue value2);
 
@@ -112,7 +104,6 @@ typedef int (*ArrayListCompareFunc)(ArrayListValue value1,
  *                       to allocate the memory.
  * @see arraylist_free
  */
-
 ArrayList *arraylist_new(unsigned int length);
 
 /**
@@ -120,7 +111,6 @@ ArrayList *arraylist_new(unsigned int length);
  *
  * @param arraylist      The ArrayList to free.
  */
-
 void arraylist_free(ArrayList *arraylist);
 
 /**
@@ -132,7 +122,6 @@ void arraylist_free(ArrayList *arraylist);
  *                       if it was not possible to allocate more memory
  *                       for the new entry.
  */
-
 int arraylist_append(ArrayList *arraylist, ArrayListValue data);
 
 /**
@@ -144,7 +133,6 @@ int arraylist_append(ArrayList *arraylist, ArrayListValue data);
  *                       if it was not possible to allocate more memory
  *                       for the new entry.
  */
-
 int arraylist_prepend(ArrayList *arraylist, ArrayListValue data);
 
 /**
@@ -153,7 +141,6 @@ int arraylist_prepend(ArrayList *arraylist, ArrayListValue data);
  * @param arraylist      The ArrayList.
  * @param index          The index of the entry to remove.
  */
-
 void arraylist_remove(ArrayList *arraylist, unsigned int index);
 
 /**
@@ -163,7 +150,6 @@ void arraylist_remove(ArrayList *arraylist, unsigned int index);
  * @param index          The index of the start of the range to remove.
  * @param length         The length of the range to remove.
  */
-
 void arraylist_remove_range(ArrayList *arraylist, unsigned int index,
                             unsigned int length);
 
@@ -179,7 +165,6 @@ void arraylist_remove_range(ArrayList *arraylist, unsigned int index,
  *                       if successful (due to an invalid index or
  *                       if it was impossible to allocate more memory).
  */
-
 int arraylist_insert(ArrayList *arraylist, unsigned int index,
                      ArrayListValue data);
 
@@ -193,7 +178,6 @@ int arraylist_insert(ArrayList *arraylist, unsigned int index,
  * @param data           The value to search for.
  * @return               The index of the value if found, or -1 if not found.
  */
-
 int arraylist_index_of(ArrayList *arraylist,
                        ArrayListEqualFunc callback,
                        ArrayListValue data);
@@ -203,7 +187,6 @@ int arraylist_index_of(ArrayList *arraylist,
  *
  * @param arraylist      The ArrayList.
  */
-
 void arraylist_clear(ArrayList *arraylist);
 
 /**
@@ -212,7 +195,6 @@ void arraylist_clear(ArrayList *arraylist);
  * @param arraylist      The ArrayList.
  * @param compare_func   Function used to compare values in sorting.
  */
-
 void arraylist_sort(ArrayList *arraylist, ArrayListCompareFunc compare_func);
 
 #ifdef __cplusplus
